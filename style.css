@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");
+
+@font-face {
+  font-family: "Pokemon";
+  src: url("/fonts/PokemonSolidNormal-xyWR.ttf") format("ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(204, 224, 255);
+  background: -webkit-linear-gradient(
+    rgba(204, 224, 255, 1) 0%,
+    rgba(213, 199, 255, 1) 50%,
+    rgba(230, 222, 254, 1) 75%,
+    rgba(244, 239, 253, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(204, 224, 255, 1) 0%,
+    rgba(213, 199, 255, 1) 50%,
+    rgba(230, 222, 254, 1) 75%,
+    rgba(244, 239, 253, 1) 100%
+  );
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato";
+  line-height: 1.6;
+  margin: 0;
+}
+.logo {
+  display: flex;
+}
+.logo h1 {
+  font-size: 3rem;
+  margin: 30px 0 30px 0;
+  font-family: "Pokemon", sans-serif;
+  color: #ffcc03;
+  -webkit-text-fill-color: #ffcc03; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: blue;
+}
+.logo h1:before {
+  content: "";
+  display: inline-block;
+  background: url("./imgs/leftPokeBall.png") no-repeat;
+  margin: 0 16px 0 0;
+  width: 40px;
+  background-size: contain;
+  height: 40px;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 4000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+
+  -moz-animation-name: spin;
+  -moz-animation-duration: 4000ms;
+  -moz-animation-iteration-count: 3;
+  -moz-animation-timing-function: linear;
+
+  -ms-animation-name: spin;
+  -ms-animation-duration: 4000ms;
+  -ms-animation-iteration-count: 3;
+  -ms-animation-timing-function: linear;
+
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: 3;
+  animation-timing-function: linear;
+}
+.logo h1:after {
+  content: "";
+  display: inline-block;
+  background: url("./imgs/rightPokeBall.png") no-repeat;
+  margin: 0 0 0 16px;
+  width: 40px;
+  background-size: contain;
+  height: 40px;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 4000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+
+  -moz-animation-name: spin;
+  -moz-animation-duration: 4000ms;
+  -moz-animation-iteration-count: 3;
+  -moz-animation-timing-function: linear;
+
+  -ms-animation-name: spin;
+  -ms-animation-duration: 4000ms;
+  -ms-animation-iteration-count: 3;
+  -ms-animation-timing-function: linear;
+
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: 3;
+  animation-timing-function: linear;
+}
+
+@-ms-keyframes spin {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.poke-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  border-radius: 20px;
+  box-shadow: 0 3px 16px rgba(100, 100, 100, 0.5);
+  margin: 10px 10px 20px 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.pokemon .img-container {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  max-width: 150px;
+  max-height: 120px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pokemon:hover {
+  transition: all 0.4s;
+  transform: scale(1.08);
+}
+.pokemon:hover .poke-container {
+  opacity: 0.8;
+}
+.pokemon:not(:hover) {
+  transition: all 0.4s;
+  transform: scale(1);
+}
+.pokemon .img-container img {
+  margin: 20px 0 20px 0;
+  max-width: 90%;
+}
+
+.pokemon .info {
+  margin-top: 20px;
+}
+
+.pokemon .number {
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+.pokemon .name {
+  color: #222121;
+  margin: 15px 0 7px;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.pokemon .effectBtn {
+  -moz-appearance: button;
+  -webkit-appearance: button;
+  appearance: button;
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.pokemon .effectBtn:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  transition: all 0.4s;
+}
+.pokemon .effectBtn:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+  transition: all 0.4s;
+}
